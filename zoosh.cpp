@@ -1361,8 +1361,8 @@ int ZooConnect() {
   //zoo_deterministic_conn_order(1); // enable deterministic order
 
   ZooClose();
-  //zh = zookeeper_init2(servers.c_str(), ZooWatcher, 10000, &myid, NULL, 0, LogCallbackFunction);
-  zh = zookeeper_init(servers.c_str(), ZooWatcher, 10000, &myid, NULL, 0);
+  zh = zookeeper_init2(servers.c_str(), ZooWatcher, 10000, &myid, NULL, 0, LogCallbackFunction);
+  //zh = zookeeper_init(servers.c_str(), ZooWatcher, 10000, &myid, NULL, 0);
   if (!zh) {
     fprintf(stderr, "ERROR %d initializing zookeeper\n", errno);
     return errno;
